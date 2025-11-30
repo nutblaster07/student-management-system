@@ -13,12 +13,7 @@ public class StudentService {
 
     @Autowired
     private StudentRepository repository;
-    public Student saveStudent(Student student) {
-        if (repository.existsById(student.getId())) {
-            throw new StudentAlreadyExistsException("Student with ID " + student.getId() + " already exists.");
-        }
-        return repository.save(student);
-    }
+
     public List<Student> getAllStudents() {
         return repository.findAll();
     }
